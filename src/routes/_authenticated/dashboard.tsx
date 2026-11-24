@@ -44,7 +44,7 @@ export const Route = createFileRoute("/_authenticated/dashboard")({
 });
 
 
-function Page(){
+export function Page{
  const db=useDb(),user=useCurrentUser(),queue=useSyncQueue(s=>s.items);const d=t.dashboard,w=t.workspace;
  const [quick,setQuick]=useState<string|null>(null);const closeQuick=useCallback(()=>setQuick(null),[]);
  if(!user)return null;
