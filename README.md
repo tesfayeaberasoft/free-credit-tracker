@@ -1,12 +1,12 @@
-# Free Credit Tracker
+# sunday school frontend 3
 
-how many free credits remaining me i want build project
+/skill:migrate-external-project Source: code archive. Migrate the attached project into Lovable.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/113a05a0-d388-4ae4-9cbd-b5621cd3ac96).
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/98c27576-42ad-416d-9c32-ff204ea8678f).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
