@@ -28,11 +28,11 @@ export const Route = createFileRoute("/_authenticated/profile")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Page,
+  component: ProfilePage,
 });
 
 
-function Page() {
+export function ProfilePage() {
   const user = useCurrentUser(); const db = useDb();
   if (!user) return null;
   const student = user.studentId ? db.students.find(s => s.id === user.studentId) : undefined;

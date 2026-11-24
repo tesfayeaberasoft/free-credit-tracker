@@ -32,11 +32,11 @@ export const Route = createFileRoute("/_authenticated/classes")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Page,
+  component: ClassesPage,
 });
 
 const selectStyle="tap min-h-11 w-full min-w-0 rounded-xl border bg-background px-3";
-function Page() {
+export function ClassesPage() {
  const db=useDb();const user=useCurrentUser();const manage=useCan("classes.manage");const [year,setYear]=useState("");const [draft,setDraft]=useState<SchoolClass|null>(null);const [roster,setRoster]=useState("");
  const assigned=(c:SchoolClass)=>c.teacherIds.includes(user?.id??"")||!!user?.classIds?.includes(c.id);
  const classes=db.classes.filter(c=>(!year||c.academicYearId===year)&&(user?.role!=="teacher"||assigned(c)));

@@ -40,11 +40,11 @@ export const Route = createFileRoute("/_authenticated/dashboard")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Page,
+  component: DashboardPage,
 });
 
 
-function Page(){
+export function DashboardPage(){
  const db=useDb(),user=useCurrentUser(),queue=useSyncQueue(s=>s.items);const d=t.dashboard,w=t.workspace;
  const [quick,setQuick]=useState<string|null>(null);const closeQuick=useCallback(()=>setQuick(null),[]);
  if(!user)return null;

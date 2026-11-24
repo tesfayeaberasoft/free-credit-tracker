@@ -33,11 +33,16 @@ import { Route as SchoolSlugAuthedAdminRouteImport } from './routes/$schoolSlug/
 import { Route as SchoolSlugAuthedAnnouncementsRouteImport } from './routes/$schoolSlug/_authed/announcements'
 import { Route as SchoolSlugAuthedAssetsRouteImport } from './routes/$schoolSlug/_authed/assets'
 import { Route as SchoolSlugAuthedAttendanceRouteImport } from './routes/$schoolSlug/_authed/attendance'
+import { Route as SchoolSlugAuthedClassesRouteImport } from './routes/$schoolSlug/_authed/classes'
+import { Route as SchoolSlugAuthedDashboardRouteImport } from './routes/$schoolSlug/_authed/dashboard'
 import { Route as SchoolSlugAuthedDepartmentsRouteImport } from './routes/$schoolSlug/_authed/departments'
 import { Route as SchoolSlugAuthedDevelopmentRouteImport } from './routes/$schoolSlug/_authed/development'
 import { Route as SchoolSlugAuthedEventsRouteImport } from './routes/$schoolSlug/_authed/events'
 import { Route as SchoolSlugAuthedFinanceRouteImport } from './routes/$schoolSlug/_authed/finance'
 import { Route as SchoolSlugAuthedMezmurRouteImport } from './routes/$schoolSlug/_authed/mezmur'
+import { Route as SchoolSlugAuthedNotificationsRouteImport } from './routes/$schoolSlug/_authed/notifications'
+import { Route as SchoolSlugAuthedProfileRouteImport } from './routes/$schoolSlug/_authed/profile'
+import { Route as SchoolSlugAuthedReportsRouteImport } from './routes/$schoolSlug/_authed/reports'
 import { Route as SchoolSlugAuthedTasksRouteImport } from './routes/$schoolSlug/_authed/tasks'
 import { Route as AuthenticatedStudentsIndexRouteImport } from './routes/_authenticated/students/index'
 import { Route as AuthenticatedStudentsIdRouteImport } from './routes/_authenticated/students/$id'
@@ -168,6 +173,17 @@ const SchoolSlugAuthedAttendanceRoute =
     path: '/attendance',
     getParentRoute: () => SchoolSlugAuthedRoute,
   } as any)
+const SchoolSlugAuthedClassesRoute = SchoolSlugAuthedClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => SchoolSlugAuthedRoute,
+} as any)
+const SchoolSlugAuthedDashboardRoute =
+  SchoolSlugAuthedDashboardRouteImport.update({
+    id: '/dashboard',
+    path: '/dashboard',
+    getParentRoute: () => SchoolSlugAuthedRoute,
+  } as any)
 const SchoolSlugAuthedDepartmentsRoute =
   SchoolSlugAuthedDepartmentsRouteImport.update({
     id: '/departments',
@@ -193,6 +209,22 @@ const SchoolSlugAuthedFinanceRoute = SchoolSlugAuthedFinanceRouteImport.update({
 const SchoolSlugAuthedMezmurRoute = SchoolSlugAuthedMezmurRouteImport.update({
   id: '/mezmur',
   path: '/mezmur',
+  getParentRoute: () => SchoolSlugAuthedRoute,
+} as any)
+const SchoolSlugAuthedNotificationsRoute =
+  SchoolSlugAuthedNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => SchoolSlugAuthedRoute,
+  } as any)
+const SchoolSlugAuthedProfileRoute = SchoolSlugAuthedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => SchoolSlugAuthedRoute,
+} as any)
+const SchoolSlugAuthedReportsRoute = SchoolSlugAuthedReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
   getParentRoute: () => SchoolSlugAuthedRoute,
 } as any)
 const SchoolSlugAuthedTasksRoute = SchoolSlugAuthedTasksRouteImport.update({
@@ -247,11 +279,16 @@ export interface FileRoutesByFullPath {
   '/$schoolSlug/announcements': typeof SchoolSlugAuthedAnnouncementsRoute
   '/$schoolSlug/assets': typeof SchoolSlugAuthedAssetsRoute
   '/$schoolSlug/attendance': typeof SchoolSlugAuthedAttendanceRoute
+  '/$schoolSlug/classes': typeof SchoolSlugAuthedClassesRoute
+  '/$schoolSlug/dashboard': typeof SchoolSlugAuthedDashboardRoute
   '/$schoolSlug/departments': typeof SchoolSlugAuthedDepartmentsRoute
   '/$schoolSlug/development': typeof SchoolSlugAuthedDevelopmentRoute
   '/$schoolSlug/events': typeof SchoolSlugAuthedEventsRoute
   '/$schoolSlug/finance': typeof SchoolSlugAuthedFinanceRoute
   '/$schoolSlug/mezmur': typeof SchoolSlugAuthedMezmurRoute
+  '/$schoolSlug/notifications': typeof SchoolSlugAuthedNotificationsRoute
+  '/$schoolSlug/profile': typeof SchoolSlugAuthedProfileRoute
+  '/$schoolSlug/reports': typeof SchoolSlugAuthedReportsRoute
   '/$schoolSlug/tasks': typeof SchoolSlugAuthedTasksRoute
   '/students/$id': typeof AuthenticatedStudentsIdRoute
   '/students/': typeof AuthenticatedStudentsIndexRoute
@@ -281,11 +318,16 @@ export interface FileRoutesByTo {
   '/$schoolSlug/announcements': typeof SchoolSlugAuthedAnnouncementsRoute
   '/$schoolSlug/assets': typeof SchoolSlugAuthedAssetsRoute
   '/$schoolSlug/attendance': typeof SchoolSlugAuthedAttendanceRoute
+  '/$schoolSlug/classes': typeof SchoolSlugAuthedClassesRoute
+  '/$schoolSlug/dashboard': typeof SchoolSlugAuthedDashboardRoute
   '/$schoolSlug/departments': typeof SchoolSlugAuthedDepartmentsRoute
   '/$schoolSlug/development': typeof SchoolSlugAuthedDevelopmentRoute
   '/$schoolSlug/events': typeof SchoolSlugAuthedEventsRoute
   '/$schoolSlug/finance': typeof SchoolSlugAuthedFinanceRoute
   '/$schoolSlug/mezmur': typeof SchoolSlugAuthedMezmurRoute
+  '/$schoolSlug/notifications': typeof SchoolSlugAuthedNotificationsRoute
+  '/$schoolSlug/profile': typeof SchoolSlugAuthedProfileRoute
+  '/$schoolSlug/reports': typeof SchoolSlugAuthedReportsRoute
   '/$schoolSlug/tasks': typeof SchoolSlugAuthedTasksRoute
   '/students/$id': typeof AuthenticatedStudentsIdRoute
   '/students': typeof AuthenticatedStudentsIndexRoute
@@ -318,11 +360,16 @@ export interface FileRoutesById {
   '/$schoolSlug/_authed/announcements': typeof SchoolSlugAuthedAnnouncementsRoute
   '/$schoolSlug/_authed/assets': typeof SchoolSlugAuthedAssetsRoute
   '/$schoolSlug/_authed/attendance': typeof SchoolSlugAuthedAttendanceRoute
+  '/$schoolSlug/_authed/classes': typeof SchoolSlugAuthedClassesRoute
+  '/$schoolSlug/_authed/dashboard': typeof SchoolSlugAuthedDashboardRoute
   '/$schoolSlug/_authed/departments': typeof SchoolSlugAuthedDepartmentsRoute
   '/$schoolSlug/_authed/development': typeof SchoolSlugAuthedDevelopmentRoute
   '/$schoolSlug/_authed/events': typeof SchoolSlugAuthedEventsRoute
   '/$schoolSlug/_authed/finance': typeof SchoolSlugAuthedFinanceRoute
   '/$schoolSlug/_authed/mezmur': typeof SchoolSlugAuthedMezmurRoute
+  '/$schoolSlug/_authed/notifications': typeof SchoolSlugAuthedNotificationsRoute
+  '/$schoolSlug/_authed/profile': typeof SchoolSlugAuthedProfileRoute
+  '/$schoolSlug/_authed/reports': typeof SchoolSlugAuthedReportsRoute
   '/$schoolSlug/_authed/tasks': typeof SchoolSlugAuthedTasksRoute
   '/_authenticated/students/$id': typeof AuthenticatedStudentsIdRoute
   '/_authenticated/students/': typeof AuthenticatedStudentsIndexRoute
@@ -354,11 +401,16 @@ export interface FileRouteTypes {
     | '/$schoolSlug/announcements'
     | '/$schoolSlug/assets'
     | '/$schoolSlug/attendance'
+    | '/$schoolSlug/classes'
+    | '/$schoolSlug/dashboard'
     | '/$schoolSlug/departments'
     | '/$schoolSlug/development'
     | '/$schoolSlug/events'
     | '/$schoolSlug/finance'
     | '/$schoolSlug/mezmur'
+    | '/$schoolSlug/notifications'
+    | '/$schoolSlug/profile'
+    | '/$schoolSlug/reports'
     | '/$schoolSlug/tasks'
     | '/students/$id'
     | '/students/'
@@ -388,11 +440,16 @@ export interface FileRouteTypes {
     | '/$schoolSlug/announcements'
     | '/$schoolSlug/assets'
     | '/$schoolSlug/attendance'
+    | '/$schoolSlug/classes'
+    | '/$schoolSlug/dashboard'
     | '/$schoolSlug/departments'
     | '/$schoolSlug/development'
     | '/$schoolSlug/events'
     | '/$schoolSlug/finance'
     | '/$schoolSlug/mezmur'
+    | '/$schoolSlug/notifications'
+    | '/$schoolSlug/profile'
+    | '/$schoolSlug/reports'
     | '/$schoolSlug/tasks'
     | '/students/$id'
     | '/students'
@@ -424,11 +481,16 @@ export interface FileRouteTypes {
     | '/$schoolSlug/_authed/announcements'
     | '/$schoolSlug/_authed/assets'
     | '/$schoolSlug/_authed/attendance'
+    | '/$schoolSlug/_authed/classes'
+    | '/$schoolSlug/_authed/dashboard'
     | '/$schoolSlug/_authed/departments'
     | '/$schoolSlug/_authed/development'
     | '/$schoolSlug/_authed/events'
     | '/$schoolSlug/_authed/finance'
     | '/$schoolSlug/_authed/mezmur'
+    | '/$schoolSlug/_authed/notifications'
+    | '/$schoolSlug/_authed/profile'
+    | '/$schoolSlug/_authed/reports'
     | '/$schoolSlug/_authed/tasks'
     | '/_authenticated/students/$id'
     | '/_authenticated/students/'
@@ -612,6 +674,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchoolSlugAuthedAttendanceRouteImport
       parentRoute: typeof SchoolSlugAuthedRoute
     }
+    '/$schoolSlug/_authed/classes': {
+      id: '/$schoolSlug/_authed/classes'
+      path: '/classes'
+      fullPath: '/$schoolSlug/classes'
+      preLoaderRoute: typeof SchoolSlugAuthedClassesRouteImport
+      parentRoute: typeof SchoolSlugAuthedRoute
+    }
+    '/$schoolSlug/_authed/dashboard': {
+      id: '/$schoolSlug/_authed/dashboard'
+      path: '/dashboard'
+      fullPath: '/$schoolSlug/dashboard'
+      preLoaderRoute: typeof SchoolSlugAuthedDashboardRouteImport
+      parentRoute: typeof SchoolSlugAuthedRoute
+    }
     '/$schoolSlug/_authed/departments': {
       id: '/$schoolSlug/_authed/departments'
       path: '/departments'
@@ -645,6 +721,27 @@ declare module '@tanstack/react-router' {
       path: '/mezmur'
       fullPath: '/$schoolSlug/mezmur'
       preLoaderRoute: typeof SchoolSlugAuthedMezmurRouteImport
+      parentRoute: typeof SchoolSlugAuthedRoute
+    }
+    '/$schoolSlug/_authed/notifications': {
+      id: '/$schoolSlug/_authed/notifications'
+      path: '/notifications'
+      fullPath: '/$schoolSlug/notifications'
+      preLoaderRoute: typeof SchoolSlugAuthedNotificationsRouteImport
+      parentRoute: typeof SchoolSlugAuthedRoute
+    }
+    '/$schoolSlug/_authed/profile': {
+      id: '/$schoolSlug/_authed/profile'
+      path: '/profile'
+      fullPath: '/$schoolSlug/profile'
+      preLoaderRoute: typeof SchoolSlugAuthedProfileRouteImport
+      parentRoute: typeof SchoolSlugAuthedRoute
+    }
+    '/$schoolSlug/_authed/reports': {
+      id: '/$schoolSlug/_authed/reports'
+      path: '/reports'
+      fullPath: '/$schoolSlug/reports'
+      preLoaderRoute: typeof SchoolSlugAuthedReportsRouteImport
       parentRoute: typeof SchoolSlugAuthedRoute
     }
     '/$schoolSlug/_authed/tasks': {
@@ -690,11 +787,16 @@ interface SchoolSlugAuthedRouteChildren {
   SchoolSlugAuthedAnnouncementsRoute: typeof SchoolSlugAuthedAnnouncementsRoute
   SchoolSlugAuthedAssetsRoute: typeof SchoolSlugAuthedAssetsRoute
   SchoolSlugAuthedAttendanceRoute: typeof SchoolSlugAuthedAttendanceRoute
+  SchoolSlugAuthedClassesRoute: typeof SchoolSlugAuthedClassesRoute
+  SchoolSlugAuthedDashboardRoute: typeof SchoolSlugAuthedDashboardRoute
   SchoolSlugAuthedDepartmentsRoute: typeof SchoolSlugAuthedDepartmentsRoute
   SchoolSlugAuthedDevelopmentRoute: typeof SchoolSlugAuthedDevelopmentRoute
   SchoolSlugAuthedEventsRoute: typeof SchoolSlugAuthedEventsRoute
   SchoolSlugAuthedFinanceRoute: typeof SchoolSlugAuthedFinanceRoute
   SchoolSlugAuthedMezmurRoute: typeof SchoolSlugAuthedMezmurRoute
+  SchoolSlugAuthedNotificationsRoute: typeof SchoolSlugAuthedNotificationsRoute
+  SchoolSlugAuthedProfileRoute: typeof SchoolSlugAuthedProfileRoute
+  SchoolSlugAuthedReportsRoute: typeof SchoolSlugAuthedReportsRoute
   SchoolSlugAuthedTasksRoute: typeof SchoolSlugAuthedTasksRoute
   SchoolSlugAuthedStudentsIdRoute: typeof SchoolSlugAuthedStudentsIdRoute
   SchoolSlugAuthedStudentsIndexRoute: typeof SchoolSlugAuthedStudentsIndexRoute
@@ -705,11 +807,16 @@ const SchoolSlugAuthedRouteChildren: SchoolSlugAuthedRouteChildren = {
   SchoolSlugAuthedAnnouncementsRoute: SchoolSlugAuthedAnnouncementsRoute,
   SchoolSlugAuthedAssetsRoute: SchoolSlugAuthedAssetsRoute,
   SchoolSlugAuthedAttendanceRoute: SchoolSlugAuthedAttendanceRoute,
+  SchoolSlugAuthedClassesRoute: SchoolSlugAuthedClassesRoute,
+  SchoolSlugAuthedDashboardRoute: SchoolSlugAuthedDashboardRoute,
   SchoolSlugAuthedDepartmentsRoute: SchoolSlugAuthedDepartmentsRoute,
   SchoolSlugAuthedDevelopmentRoute: SchoolSlugAuthedDevelopmentRoute,
   SchoolSlugAuthedEventsRoute: SchoolSlugAuthedEventsRoute,
   SchoolSlugAuthedFinanceRoute: SchoolSlugAuthedFinanceRoute,
   SchoolSlugAuthedMezmurRoute: SchoolSlugAuthedMezmurRoute,
+  SchoolSlugAuthedNotificationsRoute: SchoolSlugAuthedNotificationsRoute,
+  SchoolSlugAuthedProfileRoute: SchoolSlugAuthedProfileRoute,
+  SchoolSlugAuthedReportsRoute: SchoolSlugAuthedReportsRoute,
   SchoolSlugAuthedTasksRoute: SchoolSlugAuthedTasksRoute,
   SchoolSlugAuthedStudentsIdRoute: SchoolSlugAuthedStudentsIdRoute,
   SchoolSlugAuthedStudentsIndexRoute: SchoolSlugAuthedStudentsIndexRoute,

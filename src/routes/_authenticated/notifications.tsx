@@ -27,11 +27,11 @@ export const Route = createFileRoute("/_authenticated/notifications")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Page,
+  component: NotificationsPage,
 });
 
 
-function Page() {
+export function NotificationsPage() {
  const user=useCurrentUser(); const db=useDb(); const [unread,setUnread]=useState(false); const w=t.workspace;
  if(!user) return null;
  // Direct recipient wins over a role field; unaddressed notifications are not public.

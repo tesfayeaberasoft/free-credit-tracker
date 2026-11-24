@@ -12,7 +12,7 @@ export const Route = createFileRoute("/_authenticated/reports")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Page,
+  component: ReportsPage,
 });
 
 
@@ -74,7 +74,7 @@ import { countsTowardBalance } from "@/lib/rules/finance";
 import { availableQuantity, issuedNotReturned } from "@/lib/rules/assets";
 
 type ReportRow = {id:string; name:string; values:(string|number)[]; chart:number};
-function Page() {
+export function ReportsPage() {
  const db=useDb(); const user=useCurrentUser(); const fd=useFormatDate();
  const attendance=useCan('attendance.view'); const finance=useCan('finance.view'); const assets=useCan('assets.view'); const students=useCan('students.view');
  const options: [string,string][] = [...(attendance ? [['attendance',c.attendance] as [string,string]]:[]),...(finance ? [['finance',c.finance] as [string,string]]:[]),...(assets ? [['assets',c.assets] as [string,string]]:[]),...(students ? [['students',c.students] as [string,string]]:[])];
