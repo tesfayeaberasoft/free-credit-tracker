@@ -9,7 +9,7 @@ interface TenantContextValue {
 
 const TenantContext = createContext<TenantContextValue | null>(null);
 
-export function TenantProvider({ slug, school, children }: TenantContextValue & { children: ReactNode }) {
+export function TenantProvider({ slug, school, children }: Omit<TenantContextValue, "suspended"> & { children: ReactNode }) {
   return <TenantContext.Provider value={{ slug, school, suspended: school?.status === "suspended" }}>{children}</TenantContext.Provider>;
 }
 
